@@ -122,6 +122,12 @@ def signin():
         }
     }), 200
 
+@app.route("/signout", methods=["POST"])
+def signout():
+    # For JWT, signout is handled on the client by deleting the token.
+    # This endpoint is provided for API completeness.
+    return jsonify({"message": "Signed out successfully."}), 200
+
 if __name__=="__main__":
     app.run(debug=True)
 
